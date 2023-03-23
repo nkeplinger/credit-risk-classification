@@ -27,20 +27,26 @@ Below is the workflow overview for creating a logistics regression model for tes
 
 ## Logistics regression model results
 Below are the results of evaluating the model predictions via balanced accuracy and confusion matrix (#5 in above workflow). Results are reported for both `0` healthy loans or `1` high-risk loans:
-* *0 Precision* = 1.0
+* *0 Precision* = 1.00
 * *1 Precision* = 0.87
-* *0 Recall* = 1.0
+* *0 Recall* = 1.00
 * *1 Recall* = 0.89
-* *0 Accuracy (f1-score)* = 1.0
+* *0 Accuracy (f1-score)* = 1.00
 * *1 Accuracy (f1-score)* =  0.88
 
 ## Re-sampled and re-trained logistics regression model results
 Below are the results of evaluating the model predictions after resampling via balanced accuracy and confusion matrix (#7 in above workflow). Results are reported for both `0` healthy loans or `1` high-risk loans::
-* *0 Precision* = 1.0
+* *0 Precision* = 1.00
 * *1 Precision* = 0.87
-* *0 Recall* = 1.0
-* *1 Recall* = 1.0
-* *0 Accuracy (f1-score)* = 1.0
+* *0 Recall* = 1.00
+* *1 Recall* = 1.00
+* *0 Accuracy (f1-score)* = 1.00
 * *1 Accuracy (f1-score)* =  0.93
 
 ## Summary
+The logistic regression model did a great job at predicting low-risk loans off the bat. The precision and accuracy did not change for low-risk loans (`0`) as it was perfect at predicting for both models both models were perfect (1.0). However, for high-risk loans (`1`), the model with re-sampled/oversamples the data did a much better job at predicting high-risk loans. For this model, the precision remained the same at 0.87 among both models, meaning that they were consistent in making false positive predictions of high-risk loans. However, the recall (aka accuracy) increased from 0.89 to 1.0. This means it got better at NOT making false negative predictions. As a result the harmonic mean of precision and accuracy (i.e. the f1-score) also increased from 0.88 to 0.93.
+
+These data suggests that there is still a "risk" in its ability to predit high-risk loans. However, because of the fact that A) the re-sampled logidtics regression model improved the ability for prediction and that B) the "inaccuracy" is a conservative measure of prediction (i.e., meaning that it may slightly over-predict high risk loans), I would absolutley recommend the use and implentation of this re-sampled logistics regression model for use.
+
+
+# thanks - Nioclette :)
