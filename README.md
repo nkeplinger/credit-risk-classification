@@ -1,6 +1,6 @@
 # Credit-Risk-Classification with Supervised Machine Learning
 
-## ANalysis Overview:
+## Analysis Overview:
 
 # Training and Testing Dataset: 
 For this challenge I used the class-provided input dataset of historical lending activity from a peer-to-peer lending services company found here: `Resources/lending_data.csv`. This dataset  includes data over 77k reported lenders used to build a supervised machine learning model that can identify the creditworthiness of borrowers . Each of these >77k datasets are classified by loan status as either `0` healthy loans or `1` high-risk loans. There are seven features from each lender that were used for training and predicting the model. These include: 
